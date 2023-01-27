@@ -18,15 +18,13 @@
 		"camelcase": "error",
 		"spaced-comment": "error",
 		"quotes": ["error", "single"],
-		"no-duplicate-imports": "error"
+		"no-duplicate-imports": "error",
+		"react/no-unknown-property": [
+			"error",
+			{ "ignore": ["position", "rotation", "scale", "intensity", "decay", "distance"] }
+		]
 	},
-	"plugins": [
-		"react",
-		"import",
-		"jsx-a11y",
-		"react-hooks",
-		"@typescript-eslint"
-	],
+	"plugins": ["react", "import", "jsx-a11y", "react-hooks", "@typescript-eslint"],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": "latest",
