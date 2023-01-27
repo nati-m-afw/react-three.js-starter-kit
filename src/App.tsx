@@ -1,8 +1,10 @@
 import './App.css'
 import { Canvas } from '@react-three/fiber'
 import Star from './components/Star'
-import { Stats, OrbitControls } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import Globe from './components/Globe'
+import { Stand } from './models/Stand'
+import { Hall } from './models/Hall'
 
 function generateRandom(min: number, max: number) {
 	return Math.floor(Math.random() * (max - min + 1) + min)
@@ -24,7 +26,7 @@ function generateStars() {
 	const minP = -50
 	const maxP = 50
 	const color = 0xffffff
-	const intensity = 1
+	const intensity = 0.02
 
 	for (let i = 0; i < noOfStars; i++) {
 		stars.push(
@@ -48,6 +50,8 @@ function App() {
 				<pointLight position={[7, 0, -1]} color={'green'} />
 				{generateStars()}
 				<Globe />
+				<Hall />
+				<Stand />
 				<OrbitControls></OrbitControls>
 			</Canvas>
 		</div>
