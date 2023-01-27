@@ -2,6 +2,7 @@ import './App.css'
 import { Canvas } from '@react-three/fiber'
 import Star from './components/Star'
 import { Stats, OrbitControls } from '@react-three/drei'
+import Globe from './components/Globe'
 
 function generateRandom(min: number, max: number) {
 	return Math.floor(Math.random() * (max - min + 1) + min)
@@ -46,6 +47,7 @@ function App() {
 				{/* <ambientLight /> */}
 				<pointLight position={[7, 0, -1]} color={'green'} />
 				{generateStars()}
+				<Globe />
 				<OrbitControls></OrbitControls>
 			</Canvas>
 		</div>
