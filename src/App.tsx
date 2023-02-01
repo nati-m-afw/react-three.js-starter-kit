@@ -1,16 +1,17 @@
 import './App.css'
-import { Canvas } from '@react-three/fiber'
+// eslint-disable-next-line import/named
+import { Canvas, Vector3 } from '@react-three/fiber'
 import Star from './components/Star'
 import { OrbitControls } from '@react-three/drei'
 import Globe from './components/Globe'
 import { Stand } from './models/Stand'
 import { Hall } from './models/Hall'
 
-function generateRandom(min: number, max: number) {
+function generateRandom(min: number, max: number): number {
 	return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-function generateRandomPosition(min: number, max: number) {
+function generateRandomPosition(min: number, max: number): Array<number> {
 	const vector3 = Array.from(Array(3)).map(() => generateRandom(min, max)) as [
 		x: number,
 		y: number,
@@ -32,7 +33,7 @@ function generateStars() {
 		stars.push(
 			<Star
 				key={`star-${i}`}
-				position={generateRandomPosition(minP, maxP)}
+				position={generateRandomPosition(minP, maxP) as Vector3}
 				color={color}
 				intensity={intensity}
 			/>,

@@ -1,5 +1,4 @@
 import * as fiber from '@react-three/fiber'
-import React from 'react'
 
 interface StarProps {
 	position: fiber.Vector3
@@ -9,7 +8,7 @@ interface StarProps {
 	decay?: number
 }
 
-const Star: React.FC<StarProps> = ({ position, color, intensity, distance = 0, decay = 2 }) => {
+const Star = ({ position, color, intensity, distance = 0, decay = 2 }: StarProps): JSX.Element => {
 	return (
 		<>
 			<pointLight
